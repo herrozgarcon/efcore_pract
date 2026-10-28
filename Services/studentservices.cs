@@ -17,4 +17,19 @@ public class studentservices
                               $"DOB:-{student.DateOfBirth}");
         }
     }
+
+    public async Task AddStudent(studentrepo studentrepo)
+    {
+        Students  student = new Students();
+        Console.WriteLine("add student");
+        Console.WriteLine("enter student name");
+        student.StudentName = Console.ReadLine();
+        Console.WriteLine("enter student bloodgroup");
+        student.BloodGroup = Console.ReadLine();
+        Console.WriteLine("enter student date of birth");
+        student.DateOfBirth = DateTime.Parse(Console.ReadLine());
+
+        await studentrepo.AddAsync(student);
+
+    }
 }

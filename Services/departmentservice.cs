@@ -19,6 +19,21 @@ public class departmentservice
                 $"{department.DepartmentsId} - {department.DeptName}");
         }
     }
+
+    public async  Task adddepartment(departmentrepo departmentrepo)
+    {
+        Departments department=new Departments();
+        
+        Console.WriteLine("----- Add Department -----");
+        Console.WriteLine("enter department name");
+        department.DeptName = Console.ReadLine();
+        Console.WriteLine("enter location");
+        department.Location = Console.ReadLine();
+        department.IsActive = true;
+
+        await departmentrepo.Addasync(department);
+        Console.WriteLine("Department inserted successfully!");
+    }
     
     
     

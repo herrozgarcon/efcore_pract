@@ -17,5 +17,11 @@ public class departmentrepo
     {
         return await _context.Departments.ToListAsync();
     }
+
+    public async Task Addasync(Departments department)
+    {
+        await _context.Departments.AddAsync(department);
+        await _context.SaveChangesAsync();
+    }
     
 }

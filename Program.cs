@@ -10,8 +10,22 @@ departmentservice deptobj = new departmentservice();
 var studentrepo = new studentrepo(context);
 studentservices studobj = new studentservices();
 
-await deptobj.displaydepartments(deptrepo);
+/*
+ * 
+
+
 await studobj.displayStudents(studentrepo);
+await deptobj.displaydepartments(deptrepo);
+await deptobj.adddepartment(deptrepo);
+
+
+
+
+ */
+
+
+await studobj.AddStudent(studentrepo);
+
 
 
 
